@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Learning</title>
-</head>
-<body>
-    <div class="bg-black">
-        <h1>DOM learning on Youtube</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
+    <style>
+      .bg-black {
+        background: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">DOM learning on Youtube</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
     </div>
-</body>
+
+    <p id="demo"></p>
+    <script>
+      const myPara = document.getElementById("demo");
+
+      myPara.innerHTML = "Hello world...!";
+    </script>
+
+    <!-- A property is a value that you can get or set => innerHTML -->
+    <!-- A method is an action you can do => getElementById -->
+
+    <!-- Dynamic HTML content -->
+    <script>
+      document.getElementById("demo").innerHTML = "Date : " + Date();
+    </script>
+
+    <script>
+      document.write(Date());
+    </script>
+
+    <p id="p2">Hello world</p>
+    <script>
+      document.getElementById("p2").style.color = "red";
+    </script>
+
+    <h1 id="id1">My Heading 1</h1>
+    <button
+      type="button"
+      onclick="document.getElementById('id1').style.color = 'red'"
+    >
+      Click Me
+    </button>
+
+    <!-- Animation -->
+    <style>
+      /* Style the container */
+      #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background-color: yellow;
+        margin: 50px auto;
+        border: 2px solid #000;
+      }
+
+      /* style the nimated element */
+      #animate {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-color: red;
+      }
+
+      /*Optional: center the button */
+      #startButton {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+
+    <!-- FIX: added animate div inside container -->
+    <div id="container">
+      <div id="animate"></div>
+    </div>
+
+    <button id="startButton">Start Animation</button>
+    <script>
+      function myMove() {
+        const elem = document.getElementById("animate");
+        let pos = 0;
+        let id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos >= 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+          }
+        }
+      }
+
+      // start animation when button is clicked
+      document.getElementById("startButton").onclick = myMove;
+    </script>
+
+  </body>
 </html>
