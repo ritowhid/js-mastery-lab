@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #1e293b);
+  color: #fff;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.hint {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* TABLE STYLES */
+.color {
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+th, td {
+  padding: 0.9rem;
+  text-align: center;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+td {
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  th, td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

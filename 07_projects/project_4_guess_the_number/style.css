@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+}
+
+.game-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.game-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.info {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 0.6rem;
+}
+
+#guessField {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+#subt {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#subt:hover {
+  opacity: 0.9;
+}
+
+.resultParas {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.resultParas p {
+  margin-bottom: 0.5rem;
+}
+
+.guesses {
+  color: #38bdf8;
+}
+
+.lastResult {
+  font-weight: 700;
+  color: #facc15;
+}
+
+.lowOrHi h2 {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.button h2 {
+  margin-top: 1.2rem;
+  padding: 0.6rem;
+  background: #ef4444;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 480px) {
+  .game-card {
+    padding: 1.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  #subt {
+    width: 100%;
+  }
+}

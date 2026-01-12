@@ -1,0 +1,103 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease;
+}
+
+/* Main Card */
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+
+/* Title */
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Subtitle */
+.container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Buttons Layout */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Buttons */
+.button {
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid transparent;
+}
+
+/* Individual Colors */
+#grey {
+  background-color: grey;
+  color: white;
+}
+
+#white {
+  background-color: white;
+  color: #222;
+  border: 2px solid #ddd;
+}
+
+#blue {
+  background-color: #2563eb;
+  color: white;
+}
+
+#yellow {
+  background-color: #facc15;
+  color: #222;
+}
+
+/* Hover Effect */
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
+
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+}
