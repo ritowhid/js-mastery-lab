@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            background: #020617;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #start {
+            background-color: #22c55e;
+            color: #000;
+        }
+
+        #stop {
+            background-color: #ef4444;
+            color: #000;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Learning JS Events</h1>
+
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+
+        <div id="output">Waiting...</div>
+    </div>
+
+    <script>
+        let intervalId = null;
+
+        const sayDate = function () {
+            const time = new Date().toLocaleTimeString();
+            document.getElementById("output").innerText = `${time}`;
+            console.log("Hi", time);
+        };
+
+        document.getElementById("start").addEventListener("click", function () {
+            if (intervalId === null) {
+                intervalId = setInterval(sayDate, 1000);
+            }
+        });
+
+        document.getElementById("stop").addEventListener("click", function () {
+            clearInterval(intervalId);
+            intervalId = null;
+            document.getElementById("output").innerText = "Stopped";
+        });
+    </script>
+
+</body>
+</html>
